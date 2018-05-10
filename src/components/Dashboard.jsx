@@ -12,6 +12,7 @@ import CustomFrame from './CustomFrame';
 import BarChart from './widgets/BarChart';
 import LineChart from './widgets/LineChart';
 import DoughnutChart from './widgets/DoughnutChart';
+import DataGrid from './widgets/DataGrid';
 
 // We are using bootstrap as the UI library
 import 'bootstrap/dist/css/bootstrap.css';
@@ -40,6 +41,10 @@ class App extends Component {
           type: LineChart,
           title: 'Line Chart',
         },
+        GridWidget: {
+          type: DataGrid,
+          title: 'Data Grid',
+        },
       },
       // Layout of the dashboard
       layout: {
@@ -48,7 +53,14 @@ class App extends Component {
             className: 'col-md-12 col-sm-12 col-xs-12',
             widgets: [{key: 'ShipVitalTelemetricsWidget'}],
           }],
-        }, {
+        }, 
+        {
+          columns: [{
+            className: 'col-md-12 col-sm-12 col-xs-12',
+            widgets: [{key: 'GridWidget'}],
+          }],
+        },
+        {
           columns: [{
             className: 'col-md-8 col-sm-8 col-xs-8',
             widgets: [{key: 'EngineTelemetricsWidget'}],
@@ -57,6 +69,7 @@ class App extends Component {
             widgets: [{key: 'PerformanceWidget'}],
           }],
         }],
+        
       },
       editMode: false,
       isModalOpen: false,
