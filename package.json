@@ -10,7 +10,8 @@
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "lint": "eslint .",
-    "start": "cross-env NODE_ENV=production node server/node-server.js"
+    "start": "cross-env NODE_ENV=production node server/node-server.js",
+    "postinstall" : "npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
