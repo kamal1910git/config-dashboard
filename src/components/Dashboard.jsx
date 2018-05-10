@@ -4,14 +4,17 @@ import Dashboard, { addWidget } from 'react-dazzle';
 // App components
 import Header from './Header';
 import EditBar from './EditBar';
+import SaveBar from './SaveBar';
 import Container from './Container';
 import AddWidgetDialog from './AddWidgetDialog';
 import CustomFrame from './CustomFrame';
 
 // Widgets of the dashboard.
 import BarChart from './widgets/BarChart';
+import BarChart1 from './widgets/BarChart1';
 import LineChart from './widgets/LineChart';
 import DoughnutChart from './widgets/DoughnutChart';
+import DoughnutChart1 from './widgets/DoughnutChart1';
 import DataGrid from './widgets/DataGrid';
 
 // We are using bootstrap as the UI library
@@ -31,19 +34,27 @@ class App extends Component {
       widgets: {
         EngineTelemetricsWidget: {
           type: BarChart,
-          title: 'Bar Chart',
+          title: 'Password Weeknesses',
         },
         PerformanceWidget: {
           type: DoughnutChart,
-          title: 'Pie Chart',
+          title: 'Group Membership',
         },
         ShipVitalTelemetricsWidget: {
           type: LineChart,
-          title: 'Line Chart',
+          title: 'Sensitive Files Flow',
         },
         GridWidget: {
           type: DataGrid,
-          title: 'Data Grid',
+          title: 'User Details',
+        },
+        BarChartWidget: {
+          type: BarChart1,
+          title: 'Summary of Types of Data Open to All Users',
+        },
+        PieChartWidget: {
+          type: DoughnutChart1,
+          title: 'Unused Access to Sensitive Data',
         },
       },
       // Layout of the dashboard
@@ -53,13 +64,7 @@ class App extends Component {
             className: 'col-md-12 col-sm-12 col-xs-12',
             widgets: [{key: 'ShipVitalTelemetricsWidget'}],
           }],
-        }, 
-        {
-          columns: [{
-            className: 'col-md-12 col-sm-12 col-xs-12',
-            widgets: [{key: 'GridWidget'}],
-          }],
-        },
+        },         
         {
           columns: [{
             className: 'col-md-8 col-sm-8 col-xs-8',
@@ -67,6 +72,22 @@ class App extends Component {
           }, {
             className: 'col-md-4 col-sm-4 col-xs-4',
             widgets: [{key: 'PerformanceWidget'}],
+          }],
+        },
+        {
+          columns: [{
+            className: 'col-md-12 col-sm-12 col-xs-12',
+            widgets: [{key: 'BarChartWidget'}],
+          }],
+        },
+        {
+          columns: [{
+            className: 'col-md-8 col-sm-8 col-xs-8',
+            widgets: [{key: 'GridWidget'}],
+          },
+          {
+            className: 'col-md-4 col-sm-4 col-xs-4',
+            widgets: [{key: 'PieChartWidget'},{key: 'ShipVitalTelemetricsWidget'}],
           }],
         }],
         
@@ -137,7 +158,7 @@ class App extends Component {
         onMove={this.onMove}
         addWidgetComponentText="Add New Widget"
         />
-
+        <SaveBar onEdit={this.toggleSave} />
     </Container>
     );
   }
@@ -149,6 +170,10 @@ class App extends Component {
     this.setState({
       editMode: !this.state.editMode,
     });
+  };
+
+  toggleSave = () => {
+    alert("Dashboard configuration has been saved..")
   };
 
   /**

@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeData, Logo, Tips } from './DataUtils';
+import { makeData, Tips } from './DataUtils';
 
 // Import React Table
 import ReactTable from 'react-table';
@@ -81,7 +81,6 @@ export default class DataGrid extends React.Component {
         />
         <br />
         <Tips />
-        <Logo />
       </div>
     );
   }

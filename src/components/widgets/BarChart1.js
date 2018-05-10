@@ -2,12 +2,12 @@ import React from 'react';
 import { Bar } from 'react-chartjs';
 import { getRandomInt } from './util';
 
-class BarChart extends React.Component {
+class BarChart1 extends React.Component {
   constructor() {
     super();
     this.state = {
       data: {
-        labels: ['Password Never Expires', 'Shares Common Password', 'Week Historical Password', 'Delegatable Admin', 'LM Hash', 'Week Password', 'Password Not Required'],
+        labels: ['Email Address List', 'Password', 'Credit Card', 'Tax Forms', 'UK Telephone Number'],
         datasets: [
           {
             label: 'Bar Chart First dataset',
@@ -15,7 +15,7 @@ class BarChart extends React.Component {
             strokeColor: '#E8575A',
             highlightFill: 'rgba(220,220,220,0.75)',
             highlightStroke: 'rgba(220,220,220,1)',
-            data: [90, 59, 80, 81, 56, 55, 40],
+            data: [65, 59, 80, 81, 56],
           },
           {
             label: 'My Second dataset',
@@ -23,8 +23,8 @@ class BarChart extends React.Component {
             strokeColor: '#0094D6',
             highlightFill: 'rgba(151,187,205,0.75)',
             highlightStroke: 'rgba(151,187,205,1)',
-            data: [28, 48, 40, 19, 86, 27, 90],
-          },
+            data: [28, 48, 40, 19, 86],
+          }
         ],
       },
     };
@@ -51,10 +51,10 @@ class BarChart extends React.Component {
   render() {
     return (
       <div>
-         <Bar data={this.state.data}  options={{responsive: true, animationSteps: 300 }} height="400" width="800"/>
+         <Bar data={this.state.data}  options={{responsive: true, animationSteps: 100 }} height="210" width="800"/>
        </div>
     );
   }
 }
 
-export default BarChart;
+export default BarChart1;

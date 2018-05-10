@@ -3417,13 +3417,42 @@ ul.project_files li a i {
 
 /* *********  /widgets  **************************** */
 
+.list-group-item-heading {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  color: #1f527d !important;
+  font-weight: bold !important;
+}
+
 .edit-bar {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+.save-bar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.save-bar-btn{
+  font-size: 22px !important;
+}
 .dashboardHeader {
   text-align: center;
   height: 45px;
   padding-top: 10px;
+}
+
+.x_title{
+  background-color: #1f527d !important;
+  color: #ffffff !important;
+  border-bottom: 0px !important;
+}
+
+.x_title h2{
+  margin: 5px 5px 6px !important;
+}
+
+.x_panel {
+  border: 1px solid #1f527d !important;
 }
