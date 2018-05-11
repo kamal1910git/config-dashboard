@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bar } from 'react-chartjs';
 import { getRandomInt } from './util';
+import {HorizontalBar} from 'react-chartjs-2';
 
 class BarChart extends React.Component {
   constructor() {
@@ -50,7 +51,7 @@ class BarChart extends React.Component {
 
   render() {
     return (
-      <div>
+      <div>        
          <Bar data={this.state.data}  options={{responsive: true, animationSteps: 300 }} height="400" width="800"/>
        </div>
     );

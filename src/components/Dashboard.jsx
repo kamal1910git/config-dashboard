@@ -35,7 +35,7 @@ class App extends Component {
       widgets: {
         EngineTelemetricsWidget: {
           type: BarChart,
-          title: 'Password Weeknesses',
+          title: 'Password Weaknesses',
         },
         PerformanceWidget: {
           type: DoughnutChart,
