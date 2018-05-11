@@ -3,6 +3,7 @@ import Dashboard, { addWidget } from 'react-dazzle';
 
 // App components
 import Header from './Header';
+import LeftNav from './MenuWrap';
 import EditBar from './EditBar';
 import SaveBar from './SaveBar';
 import Container from './Container';
@@ -145,8 +146,9 @@ class App extends Component {
   render() {
     return (
     <Container>
-      <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.handleWidgetSelection}/>
+      <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.handleWidgetSelection}/>     
       <Header />
+      <LeftNav menus={menus} />
       <EditBar onEdit={this.toggleEdit} />
       <Dashboard
         frameComponent={CustomFrame}
@@ -196,3 +198,16 @@ class App extends Component {
 }
 
 export default App;
+
+const menus = {
+  slide: {buttonText: 'Slide', items: 1},
+  stack: {buttonText: 'Stack', items: 1},
+  elastic: {buttonText: 'Elastic', items: 1},
+  bubble: {buttonText: 'Bubble', items: 1},
+  push: {buttonText: 'Push', items: 1},
+  pushRotate: {buttonText: 'Push Rotate', items: 2},
+  scaleDown: {buttonText: 'Scale Down', items: 2},
+  scaleRotate: {buttonText: 'Scale Rotate', items: 2},
+  fallDown: {buttonText: 'Fall Down', items: 2},
+  reveal: {buttonText: 'Reveal', items: 1}
+};
